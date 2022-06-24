@@ -1,0 +1,13 @@
+---
+- name: create multiple user
+  hosts: webserver
+  become: true
+  vars_files:
+    - akki.yml
+  tasks:
+    - name: create user '{{user}}'
+      user:
+        name: '{{user}}'
+        state: present
+        
+

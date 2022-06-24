@@ -1,0 +1,6 @@
+---
+- name: role playbook
+  hosts: webserver
+  become: true
+  roles:
+    - akshay_role

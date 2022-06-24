@@ -1,0 +1,16 @@
+---
+- name: install httpd package and in handler start their service
+  hosts: webserver
+  become: true
+  tasks:
+    - name: install httpd package
+      yum:
+        name: httpd
+        state: present
+      notify: hellow akshay
+  handlers:
+    - name: hellow akshay
+      service:
+         name: httpd
+         state: started
+
